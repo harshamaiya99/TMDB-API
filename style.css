@@ -1,179 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
+/* General Page Styling */
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #0d253f;
+  font-family: "Poppins", sans-serif;
+  background-color: #0b1d33;
   color: #fff;
 }
 
-/* ---------------- LOGIN PAGE ---------------- */
-.login-body {
-  background: radial-gradient(circle at 20% 20%, #01b4e4, #0d253f 70%);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* ===== Login Page ===== */
 .login-container {
-  text-align: center;
-  color: #fff;
-}
-
-.login-box {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 50px 60px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  max-width: 400px;
-}
-
-.logo {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.login-header {
+  display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-.logo-icon {
-  font-size: 2rem;
+.login-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 
-.login-box h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  color: #fff;
+.login-header img {
+  width: 40px;
+  height: 40px;
 }
 
-.login-box p {
-  opacity: 0.9;
-  margin-top: 10px;
-  font-size: 0.95rem;
+.login-container p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
-.login-form {
-  display: flex;
-  margin-top: 25px;
-  gap: 10px;
-}
-
-.login-form input {
-  flex: 1;
-  padding: 12px;
-  border-radius: 8px;
+.login-container input {
+  padding: 12px 16px;
+  width: 250px;
   border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-right: 10px;
   font-size: 1rem;
 }
 
-.login-form button {
-  background: #01b4e4;
+.login-container button {
+  background-color: #1e90ff;
+  color: white;
   border: none;
   padding: 12px 18px;
   border-radius: 8px;
-  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  color: #fff;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
-.login-form button:hover {
-  background: #0199c4;
+.login-container button:hover {
+  background-color: #63b3ff;
 }
 
-/* ---------------- MAIN PAGE ---------------- */
-header {
+/* ===== Dashboard Page ===== */
+.dashboard-header {
+  background-color: #112b4a;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #01b4e4;
-  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
-header h1 {
+.dashboard-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
   margin: 0;
-  font-size: 1.4rem;
 }
 
 .search-bar {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .search-bar input {
-  padding: 10px;
-  border-radius: 6px;
+  padding: 10px 15px;
+  border-radius: 8px;
   border: none;
-  width: 250px;
+  outline: none;
+  width: 280px;
+  font-size: 1rem;
 }
 
 .search-bar button {
-  background: #0d253f;
-  color: white;
+  background-color: #1e90ff;
   border: none;
-  padding: 10px 14px;
-  border-radius: 6px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-main {
+.search-bar button:hover {
+  background-color: #63b3ff;
+}
+
+/* ===== Section Headings ===== */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 30px 40px 10px;
+  border-left: 5px solid #1e90ff;
+  padding-left: 10px;
+}
+
+/* ===== Cards Grid ===== */
+.card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 18px;
-  padding: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  padding: 20px 40px;
 }
 
+/* ===== Individual Card ===== */
 .card {
-  background: #162e4d;
-  border-radius: 10px;
+  background-color: #162f4d;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
 .card img {
   width: 100%;
-  height: 230px;
+  height: 260px;
   object-fit: cover;
 }
 
-.card-info {
-  padding: 10px 12px;
-  text-align: center;
+.card-content {
+  padding: 15px;
 }
 
-.card-info h3 {
-  font-size: 0.9rem;
-  margin: 5px 0;
-  color: #fff;
-}
-
-.meta {
-  font-size: 0.75rem;
-  color: #a0aec0;
-  margin-bottom: 4px;
-}
-
-.rating {
+.card-title {
+  font-size: 1rem;
   font-weight: 600;
-  color: #01b4e4;
-  font-size: 0.85rem;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
-.no-results {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 50px;
-  opacity: 0.7;
+.card-date {
+  font-size: 0.9rem;
+  color: #b0c4de;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .card img {
+    height: 220px;
+  }
 }
