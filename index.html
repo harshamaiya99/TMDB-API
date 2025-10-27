@@ -6,31 +6,32 @@
   <title>TMDB Explorer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="login-body">
-  <div class="login-container">
-    <div class="login-box">
-      <div class="logo">
-        <span class="logo-icon">🎬</span>
-        <h1>TMDB Explorer</h1>
-      </div>
-      <p>Enter your TMDB API Key to continue</p>
-      <div class="login-form">
-        <input type="text" id="apiKeyInput" placeholder="Enter TMDB API Key" />
-        <button id="loginBtn">Continue →</button>
-      </div>
+<body>
+  <header>
+    <h1>TMDB Explorer</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search movies or TV shows..." />
+      <button id="logoutBtn">Logout</button>
     </div>
-  </div>
+  </header>
 
-  <script>
-    document.getElementById('loginBtn').addEventListener('click', () => {
-      const apiKey = document.getElementById('apiKeyInput').value.trim();
-      if (!apiKey) {
-        alert('Please enter your TMDB API key!');
-        return;
-      }
-      sessionStorage.setItem('tmdb_api_key', apiKey);
-      window.location.href = 'home.html';
-    });
-  </script>
+  <main>
+    <section id="searchSection" style="display: none;">
+      <h2>Search Results</h2>
+      <div id="searchResults" class="grid"></div>
+    </section>
+
+    <section id="moviesSection">
+      <h2>🎬 Trending Movies</h2>
+      <div id="trendingMovies" class="grid"></div>
+    </section>
+
+    <section id="tvSection">
+      <h2>📺 Trending TV Shows</h2>
+      <div id="trendingTV" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
