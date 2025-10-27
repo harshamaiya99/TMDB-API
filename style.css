@@ -1,85 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #0d253f;
   color: #fff;
   margin: 0;
+  min-height: 100vh;
 }
 
+/* ---------- LOGIN PAGE ---------- */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at top, #01b4e4 0%, #0d253f 70%);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.login-card h1 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #01b4e4;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-card button:hover {
+  background: #039ec4;
+}
+
+/* ---------- MAIN PAGE ---------- */
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   background: #01b4e4;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  flex-wrap: wrap;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
-header input {
-  width: 50%;
-  padding: 8px;
-  border-radius: 5px;
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px 12px;
+  border-radius: 6px;
   border: none;
+  width: 250px;
 }
 
-header button {
+.search-bar button {
   background: #0d253f;
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 10px 14px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
+.search-bar button:hover {
+  background: #071830;
+}
+
+/* ---------- CONTENT GRID ---------- */
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 30px;
 }
 
 .card {
   background: #1b2a4a;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
 .card img {
   width: 100%;
-  height: 270px;
+  height: 300px;
   object-fit: cover;
 }
 
-.login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+.card-info {
+  padding: 15px;
 }
 
-.login-container input {
-  padding: 10px;
-  width: 250px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-}
-
-.login-container button {
-  background: #01b4e4;
+.card-info h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
   color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-weight: 600;
+  color: #01b4e4;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 50px;
+  opacity: 0.7;
 }

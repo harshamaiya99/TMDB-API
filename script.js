@@ -28,20 +28,25 @@ function displayResults(items) {
   content.innerHTML = '';
 
   if (!items || items.length === 0) {
-    content.innerHTML = '<p>No results found.</p>';
+    content.innerHTML = '<p class="no-results">No results found.</p>';
     return;
   }
 
   items.forEach(item => {
     const title = item.title || item.name;
     const image = item.poster_path ? `${IMG_BASE_URL}${item.poster_path}` : 'https://via.placeholder.com/500x750?text=No+Image';
+    const mediaType = item.media_type ? item.media_type.toUpperCase() : 'UNKNOWN';
+    const rating = item.vote_average ? item.vote_average.toFixed(1) : 'N/A';
+
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `
       <img src="${image}" alt="${title}" />
-      <h3>${title}</h3>
-      <p>${item.media_type ? item.media_type.toUpperCase() : ''}</p>
-      <p>⭐ ${item.vote_average ? item.vote_average.toFixed(1) : 'N/A'}</p>
+      <div class="card-info">
+        <h3>${title}</h3>
+        <p class="meta">${mediaType}</p>
+        <div class="rating">⭐ ${rating}</div>
+      </div>
     `;
     content.appendChild(card);
   });
