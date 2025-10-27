@@ -6,80 +6,99 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  margin: 0;
   background-color: #0d253f;
   color: #fff;
-  margin: 0;
-  min-height: 100vh;
 }
 
-/* ---------- LOGIN PAGE ---------- */
-.login-wrapper {
+/* ---------------- LOGIN PAGE ---------------- */
+.login-body {
+  background: radial-gradient(circle at 20% 20%, #01b4e4, #0d253f 70%);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: radial-gradient(circle at top, #01b4e4 0%, #0d253f 70%);
 }
 
-.login-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px 50px;
-  border-radius: 15px;
+.login-container {
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 50px 60px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
+  max-width: 400px;
 }
 
-.login-card h1 {
-  margin-bottom: 10px;
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.login-box h1 {
+  margin: 0;
   font-size: 1.8rem;
-  letter-spacing: 1px;
+  color: #fff;
 }
 
-.subtitle {
-  margin-bottom: 25px;
-  font-size: 0.9rem;
-  opacity: 0.8;
+.login-box p {
+  opacity: 0.9;
+  margin-top: 10px;
+  font-size: 0.95rem;
 }
 
-.login-card input {
-  width: 100%;
+.login-form {
+  display: flex;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.login-form input {
+  flex: 1;
   padding: 12px;
   border-radius: 8px;
   border: none;
-  margin-bottom: 15px;
   font-size: 1rem;
 }
 
-.login-card button {
-  width: 100%;
-  padding: 12px;
+.login-form button {
   background: #01b4e4;
   border: none;
-  color: #fff;
-  font-weight: 600;
+  padding: 12px 18px;
   border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  color: #fff;
+  transition: background 0.3s;
 }
 
-.login-card button:hover {
-  background: #039ec4;
+.login-form button:hover {
+  background: #0199c4;
 }
 
-/* ---------- MAIN PAGE ---------- */
+/* ---------------- MAIN PAGE ---------------- */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #01b4e4;
-  padding: 12px 20px;
+  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .search-bar {
@@ -88,7 +107,7 @@ header h1 {
 }
 
 .search-bar input {
-  padding: 10px 12px;
+  padding: 10px;
   border-radius: 6px;
   border: none;
   width: 250px;
@@ -101,59 +120,55 @@ header h1 {
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-.search-bar button:hover {
-  background: #071830;
-}
-
-/* ---------- CONTENT GRID ---------- */
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 25px;
-  padding: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 18px;
+  padding: 25px;
 }
 
 .card {
-  background: #1b2a4a;
-  border-radius: 12px;
+  background: #162e4d;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
 .card img {
   width: 100%;
-  height: 300px;
+  height: 230px;
   object-fit: cover;
 }
 
 .card-info {
-  padding: 15px;
+  padding: 10px 12px;
+  text-align: center;
 }
 
 .card-info h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  margin: 5px 0;
   color: #fff;
 }
 
 .meta {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #a0aec0;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .rating {
   font-weight: 600;
   color: #01b4e4;
+  font-size: 0.85rem;
 }
 
 .no-results {

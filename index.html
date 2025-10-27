@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TMDB Login</title>
+  <title>TMDB Explorer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="login-wrapper">
-    <div class="login-card">
-      <h1>🎬 TMDB Explorer</h1>
-      <p class="subtitle">Enter your TMDB API Key to continue</p>
-      <input type="text" id="apiKeyInput" placeholder="Enter TMDB API Key" />
-      <button id="loginBtn">Continue →</button>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo">
+        <span class="logo-icon">🎬</span>
+        <h1>TMDB Explorer</h1>
+      </div>
+      <p>Enter your TMDB API Key to continue</p>
+      <div class="login-form">
+        <input type="text" id="apiKeyInput" placeholder="Enter TMDB API Key" />
+        <button id="loginBtn">Continue →</button>
+      </div>
     </div>
   </div>
 
