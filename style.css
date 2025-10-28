@@ -63,7 +63,8 @@ body {
   background-color: #63b3ff;
 }
 
-/* ===== Dashboard Page ===== */
+
+/* ===== Dashboard Header ===== */
 .dashboard-header {
   background-color: #112b4a;
   padding: 20px 40px;
@@ -90,7 +91,7 @@ body {
   border-radius: 8px;
   border: none;
   outline: none;
-  width: 280px;
+  width: 300px;
   font-size: 1rem;
 }
 
@@ -109,7 +110,7 @@ body {
   background-color: #63b3ff;
 }
 
-/* ===== Cards Section Headings ===== */
+/* ===== Section Headings ===== */
 .section-title {
   font-size: 1.6rem;
   font-weight: 600;
@@ -117,6 +118,9 @@ body {
   border-left: 5px solid #1e90ff;
   padding-left: 10px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* ===== Card Grid Layout ===== */
@@ -125,8 +129,8 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
   padding: 0 40px 40px;
-  justify-items: center;
   box-sizing: border-box;
+  width: 100%;
 }
 
 /* ===== Individual Card ===== */
@@ -134,7 +138,6 @@ body {
   background-color: #162f4d;
   border-radius: 14px;
   overflow: hidden;
-  width: 200px;
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -168,20 +171,48 @@ body {
   line-height: 1.2em;
 }
 
-.card-date {
-  font-size: 0.9rem;
+.card-type {
+  font-size: 0.85rem;
   color: #b0c4de;
+  margin-bottom: 5px;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #ffcc00;
+}
+
+/* ===== Spinner ===== */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid #1e90ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .card-container {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-  }
-
-  .card {
-    width: 180px;
   }
 
   .card img {
@@ -190,14 +221,19 @@ body {
 }
 
 @media (max-width: 600px) {
-  .card-container {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 18px;
-    padding: 0 20px 30px;
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
   }
 
-  .card {
-    width: 150px;
+  .search-bar input {
+    width: 100%;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 0 20px 30px;
   }
 
   .card img {
